@@ -1,27 +1,55 @@
-
 /*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+const showMenu = (toggleId, navId) => {
+  const toggle = document.getElementById(toggleId),
+        nav = document.getElementById(navId);
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  }
+};
+showMenu("nav-toggle", "nav-menu");
+
+/*===== REMOVE MENU ON LINK CLICK (Mobile) =====*/ 
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav__link');
+
+function scrollActive() {
+  const navLinks = document.querySelectorAll('.nav__link');
+  let currentSectionId = "";
+
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 100 && rect.bottom >= 100) {
+      currentSectionId = section.getAttribute('id');
     }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active-link');
+    if (link.getAttribute('href') === `#${currentSectionId}`) {
+      link.classList.add('active-link');
+    }
+  });
 }
-showMenu('nav-toggle','nav-menu')
 
-// animasi cursor 
+window.addEventListener('scroll', scrollActive);
+window.addEventListener('load', scrollActive);
 
+window.addEventListener('scroll', scrollActive);
+window.addEventListener('load', scrollActive);
+
+/*===== CURSOR PARTICLE ANIMATION =====*/ 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let mouse = { x: null, y: null };
+let particlesArray = [];
 
-window.addEventListener("mousemove", function (e) {
+window.addEventListener("mousemove", e => {
   mouse.x = e.x;
   mouse.y = e.y;
   for (let i = 0; i < 5; i++) {
@@ -60,8 +88,6 @@ class Particle {
   }
 }
 
-let particlesArray = [];
-
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < particlesArray.length; i++) {
@@ -74,74 +100,9 @@ function animate() {
   }
   requestAnimationFrame(animate);
 }
-
 animate();
 
-
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
-const sections = document.querySelectorAll('.section[id]');
-
-function scrollActive() {
-  const scrollY = window.pageYOffset;
-  let currentSectionId = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - document.querySelector(".l-header").offsetHeight;
-    const sectionHeight = section.offsetHeight;
-
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      currentSectionId = section.getAttribute("id");
-    }
-  });
-
-  document.querySelectorAll(".nav__link").forEach(link => {
-    link.classList.remove("active-link");
-  });
-
-  if (currentSectionId) {
-    const activeLink = document.querySelector(`.nav__link[href="#${currentSectionId}"]`);
-    if (activeLink) {
-      activeLink.classList.add("active-link");
-    }
-  }
-
-  // Tangani scroll paling atas untuk home
-  if (scrollY < 200) {
-    document.querySelectorAll(".nav__link").forEach(link => link.classList.remove("active-link"));
-    document.querySelector('.nav__link[href="#home"]').classList.add("active-link");
-    
-  }
-}
-
-
-
-window.addEventListener("scroll", scrollActive);
-window.addEventListener("load", scrollActive); 
-
-/*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200,
-//     reset: true
-});
-
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
-
+/*===== TYPING EFFECT =====*/ 
 const typingEl = document.getElementById("typing-text");
 const text = "Endru Aidil";
 let index = 0;
@@ -156,7 +117,7 @@ function typeEffect() {
       setTimeout(typeEffect, 150);
     } else {
       isDeleting = true;
-      setTimeout(typeEffect, 1000); // tunggu sebelum mulai hapus
+      setTimeout(typeEffect, 1000);
     }
   } else {
     if (index > 0) {
@@ -164,13 +125,42 @@ function typeEffect() {
       setTimeout(typeEffect, 100);
     } else {
       isDeleting = false;
-      setTimeout(typeEffect, 500); // tunggu sebelum mulai ketik lagi
+      setTimeout(typeEffect, 500);
     }
   }
 }
-
 window.addEventListener("load", typeEffect);
 
-// skill animasi 
+/*===== SCROLL REVEAL ANIMATION =====*/ 
+const sr = ScrollReveal({
+  origin: "bottom",
+  distance: "50px",
+  duration: 1000,
+  delay: 200,
+  reset: false
+});
 
+sr.reveal("section", { interval: 200 });
+sr.reveal(".home__data", { origin: "left" });
+sr.reveal(".home__social", { origin: "right", delay: 300 });
+sr.reveal(".about-content", { delay: 200 });
+sr.reveal(".horizontal-bars .bar", { interval: 100 });
+sr.reveal(".radial-bar", { interval: 150 });
+sr.reveal(".portofolio-container .card-1, .card-2, .card-3", { interval: 200 });
+sr.reveal(".contact-info, .contact-form", { interval: 200 });
 
+// === Radial Bars Animation ===
+var v1 = $(".i1").attr("data-pg");
+$(".i1").animate({
+  width: v1
+}, 2000);
+var v2 = $(".i2").attr("data-pg");
+$(".i2").animate({
+  width: v2
+}, 2000);
+var v3 = $(".i3").attr("data-pg");
+$(".i3").animate({
+  width: v3
+}, 2000);
+/*var v4 = $(".i4").attr("data-pg");
+$(".i4").animate({width:v4},2000);*/
