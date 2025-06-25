@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio-Endru_Aidil</title>
+    <link rel="stylesheet" href="/asset/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Animasi cursor -->
+    <canvas id="canvas"></canvas>
+
+    <!--===== HEADER =====-->
+    <header class="l-header">
+      <nav class="nav bd-grid">
+        <div><a href="#" class="nav__logo">Aidil</a></div>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#home" class="nav__link ">Home</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#skills"  class="nav__link">Skills</a></li>
+            <li class="nav__item"><a href="#portofolio" class="nav__link">Portofolio</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+        </div>
+        <div class="nav__toggle" id="nav-toggle"><i class="bx bx-menu"></i></div>
+      </nav>
+    </header>
+
+    <main class="l-main">
+      <!--===== HOME =====-->
+      <section class="home bd-grid" id="home">
+        <div class="home__data">
+          <h1 class="home__title">
+            Hi There👋<br />I'am <span id="typing-text" class="home__title-color typing">Endru Aidil</span><br />Informatics Engineering
+          </h1>
+          <a href="#contact" class="button">Contact</a>
+        </div>
+
+        <div class="home__social">
+          <a href="#" class="home__social-icon"><i class="bx bxl-linkedin"></i></a>
+          <a href="#" class="home__social-icon"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="home__social-icon"><i class="bx bxl-github"></i></a>
+        </div>
+      </section>
+
+      <!--===== ABOUT =====-->
+      <section class="section about-section" id="about">
+        <h2 class="page-title">About Me</h2>
+        <div class="about-content">
+          <div class="main-box">
+            <div class="content">
+              <input type="checkbox" id="check" />
+              <div class="image-box">
+                <img src="asset/img/profile.jpg" alt="My Photo" />
+                <div class="about">
+                  <div class="details">
+                    <span class="name">Aidil</span>
+                    <span class="job">Informatics Student</span>
+                  </div>
+                </div>
+              </div>
+              <label for="check" class="box"></label>
+            </div>
+          </div>
+
+          <div class="about-description">
+            <p>
+              Hi there! I'm <strong>Endru Aidil</strong>, an Informatics Engineering student at
+              <strong>Siliwangi University</strong>. I'm passionate about web development and
+              currently learning HTML, CSS, JavaScript, and frameworks like <strong>Tailwind</strong>
+              and <strong>Bootstrap</strong>. I'm aiming to become a web developer and love exploring
+              new tech to improve my skills.
+            </p>
+            <a href="asset/files/CV_Aidil.pdf" class="button" download>Download CV</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skill Section  -->
+    <section class="skills-section section" id="skills">
+       <div class="container">
+        <h1 class="heading">My Skills</h1>
+           <div class="horizontal-bars">
+               <div class="bar">
+                   <div class="info">
+                       <span>HTML</span>
+                   </div>
+                   <div class="progress-line html">
+                       <span></span>
+                   </div>
+               </div>
+               <div class="bar">
+                   <div class="info">
+                       <span>CSS</span>
+                   </div>
+                   <div class="progress-line css">
+                       <span></span>
+                   </div>
+               </div>
+               <div class="bar">
+                   <div class="info">
+                       <span>Java Script</span>
+                   </div>
+                   <div class="progress-line Javascript">
+                       <span></span>
+                   </div>
+               </div>
+               <div class="bar">
+                   <div class="info">
+                       <span>React Native</span>
+                   </div>
+                   <div class="progress-line Reactnative">
+                       <span></span>
+                   </div>
+               </div>
+               <div class="bar">
+                   <div class="info">
+                       <span>Tailwind</span>
+                   </div>
+                   <div class="progress-line Tailwind">
+                       <span></span>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div class="container">
+  <h1 class="heading">Radial Bars</h1>
+  <div class="radial-bars">
+
+    <div class="radial-bar">
+      <svg viewBox="0 0 200 200">
+        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+        <circle class="path" style="--percent: 75;" cx="100" cy="100" r="80"></circle>
+    </svg>
+      <div class="percentage">75%</div>
+      <div class="text">Creativity</div>
+    </div>
+
+    <div class="radial-bar">
+      <svg viewBox="0 0 200 200">
+        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+       <circle class="path" style="--percent: 85;" cx="100" cy="100" r="80"></circle>
+    </svg>
+      <div class="percentage">85%</div>
+      <div class="text">Communication</div>
+    </div>
+
+    <div class="radial-bar">
+      <svg viewBox="0 0 200 200">
+        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+       <circle class="path" style="--percent: 75;" cx="100" cy="100" r="80"></circle>
+    </svg>
+      <div class="percentage">75%</div>
+      <div class="text">Problem Solving</div>
+    </div>
+
+    <div class="radial-bar">
+      <svg viewBox="0 0 200 200">
+        <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+        <circle class="path" style="--percent: 90;" cx="100" cy="100" r="80"></circle>
+    </svg>
+      <div class="percentage">90%</div>
+      <div class="text">Teamwork</div>
+    </div>
+
+  </div>
+</div>
+
+
+  
+
+<!-- portofolio section  -->
+ <section class="section" id="portofolio">
+  <h2 class="page-title">Portofolio</h2>
+  <div class="portofolio-container">
+    <div class="card-1">
+      <img src="asset/img/E-Certificate Web Developer.png" />
+      <div class="card-content">
+        <h3>Software Developer</h3>
+        <p>Generate Lorem Ipsum text with customizable options for characters, words</p>
+        <a href="#" class="button">View More</a>
+      </div>
+    </div>
+    <div class="card-2">
+      <img src="asset/img/E-Certificate React Native.png" />
+      <div class="card-content">
+        <h3>React Native</h3>
+        <p>Generate Lorem Ipsum text with customizable options for characters, words</p>
+        <a href="#" class="button">View More</a>
+      </div>
+    </div>
+    <div class="card-3">
+      <img src="asset/img/E-Certificate Web Developer.png" />
+      <div class="card-content">
+        <h3>Software Developer</h3>
+        <p>Generate Lorem Ipsum text with customizable options for characters, words</p>
+        <a href="#" class="button">View More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- form section  -->
+     <section class="contact section" id="contact">
+  <h2 class="page-title">Get In Touch</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="info-item floating" style="animation-delay: 0.2s;">
+        <div class="info-icon">📧</div>
+        <div class="info-content">
+          <h3>Email</h3>
+          <p><a href="mailto:endruaidil.fitriansyah@gmail.com">endruaidil.fitriansyah2@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="info-item floating" style="animation-delay: 0.4s;">
+        <div class="info-icon">📱</div>
+        <div class="info-content">
+          <h3>Phone</h3>
+          <p><a href="tel:+1234567890">0921294913</a></p>
+        </div>
+      </div>
+
+      <div class="info-item floating" style="animation-delay: 0.6s;">
+        <div class="info-icon">📍</div>
+        <div class="info-content">
+          <h3>Location</h3>
+          <p>Bandung Barat</p>
+        </div>
+      </div>
+
+      <div class="social-links">
+        <a href="#" class="social-link">📘</a>
+        <a href="#" class="social-link">🐦</a>
+        <a href="#" class="social-link">📸</a>
+        <a href="#" class="social-link">💼</a>
+        <a href="#" class="social-link">🎥</a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xqabyrld" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Michael" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Michael@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" class="form-control" placeholder="Hello, I would like to..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+
+
+
+      <!-- Placeholder for other sections -->
+    
+    
+
+    <footer class="footer"></footer>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="asset/js/script.js"></script>
+  </body>
+</html>
