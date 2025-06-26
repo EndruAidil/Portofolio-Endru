@@ -144,23 +144,49 @@ sr.reveal("section", { interval: 200 });
 sr.reveal(".home__data", { origin: "left" });
 sr.reveal(".home__social", { origin: "right", delay: 300 });
 sr.reveal(".about-content", { delay: 200 });
-sr.reveal(".horizontal-bars .bar", { interval: 100 });
-sr.reveal(".radial-bar", { interval: 150 });
+sr.reveal(".skills-section section", { interval: 100 });
 sr.reveal(".portofolio-container .card-1, .card-2, .card-3", { interval: 200 });
 sr.reveal(".contact-info, .contact-form", { interval: 200 });
 
-// === Radial Bars Animation ===
-var v1 = $(".i1").attr("data-pg");
-$(".i1").animate({
-  width: v1
-}, 2000);
-var v2 = $(".i2").attr("data-pg");
-$(".i2").animate({
-  width: v2
-}, 2000);
-var v3 = $(".i3").attr("data-pg");
-$(".i3").animate({
-  width: v3
-}, 2000);
-/*var v4 = $(".i4").attr("data-pg");
-$(".i4").animate({width:v4},2000);*/
+// Set width dari data-pg
+  document.querySelectorAll('.skills_chart .inner').forEach(bar => {
+    const percentage = bar.getAttribute('data-pg');
+    if (percentage) {
+      bar.style.width = percentage;
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const successMessage = document.getElementById("form-success");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xqabyrld", {
+        method: "POST",
+        headers: {
+          Accept: "application/json"
+        },
+        body: formData
+      });
+
+      if (response.ok) {
+        successMessage.style.display = "block";
+        form.reset();
+
+        // Sembunyikan setelah beberapa detik (opsional)
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+      } else {
+        alert("Terjadi kesalahan. Silakan coba lagi.");
+      }
+    } catch (error) {
+      alert("Gagal mengirim. Periksa koneksi internet.");
+    }
+  });
+});

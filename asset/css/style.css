@@ -207,11 +207,15 @@ canvas#canvas {
 }
 .home__social {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .home__social-icon {
   width: max-content;
-  margin-bottom: var(--mb-2);
+  margin: 0 0.5rem;
   font-size: 1.5rem;
   color: var(--second-color);
 }
@@ -376,7 +380,18 @@ canvas#canvas {
 .skills_chart * {
   font-family: var(--body-font);
 }
-
+.skills_chart .bar-label {
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.skills_chart .responsive-container-block.inner {
+  position: relative;
+}
 .skills_chart .text-blk {
   margin-top: 0px;
   margin-right: 0px;
@@ -627,6 +642,7 @@ canvas#canvas {
 .portofolio-container .card-2:hover,
 .portofolio-container .card-3:hover {
   transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 /* Gambar full tanpa jarak */
@@ -851,7 +867,17 @@ textarea.form-control {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(116, 86, 255, 0.5);
 }
-
+.form-success {
+  display: none;
+  color: #4CAF50;
+  background-color: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeIn 0.5s ease forwards;
+}
 
 
 @media (max-width: 768px) {
@@ -997,4 +1023,13 @@ textarea.form-control {
  .nav__link.active-link {
   color: #ab3ef4;
   transition: color 0.3s ease;
+}
+
+@media screen and (max-width: 400px) {
+  .home__social {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem; /* tambahkan jarak antar ikon */
+    padding-top: 1rem;
+  }
 }
