@@ -116,8 +116,8 @@ canvas#canvas {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #000; /* ubah dari #fff ke hitam */
-  box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+  background-color: #111;
+  box-shadow: 0 1px 4px #111;
 }
 
 /*===== NAV =====*/
@@ -878,7 +878,57 @@ textarea.form-control {
   text-align: center;
   animation: fadeIn 0.5s ease forwards;
 }
+/* ===== FOOTER STYLE ===== */
+.footer {
+  background-color: #111;
+  color: #eee;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
 
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer-socials a {
+  margin: 0 10px;
+  color: #eee;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #00ADB5;
+}
+/* ===== SCROLL TO TOP BUTTON ===== */
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--first-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 45px; /* untuk vertikal centering */
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-top:hover {
+  background-color: var(--first-color);
+  transform: translateY(-4px);
+}
 
 @media (max-width: 768px) {
     .contact-container {

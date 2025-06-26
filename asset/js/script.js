@@ -190,3 +190,13 @@ sr.reveal(".contact-info, .contact-form", { interval: 200 });
     }
   });
 });
+
+const scrollTopBtn = document.getElementById('scroll-top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollTopBtn.style.display = 'block';
+    } else {
+      scrollTopBtn.style.display = 'none';
+    }
+  });
